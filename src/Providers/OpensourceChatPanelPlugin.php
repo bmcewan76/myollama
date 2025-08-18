@@ -1,14 +1,14 @@
 <?php
 
-namespace Filaforge\OpensourceChat;
+namespace Filaforge\OpensourceChat\Providers;
 
-use Filament\Contracts\Plugin as PluginContract;
-use Filament\Panel;
 use Filaforge\OpensourceChat\Pages\OpenSourceChatPage;
 use Filaforge\OpensourceChat\Pages\OpenSourceSettingsPage;
-use Filaforge\OpensourceChat\Providers\OpensourceChatPanelPlugin;
+use Filaforge\OpensourceChat\Pages\OsModelsPage;
+use Filament\Contracts\Plugin as PluginContract;
+use Filament\Panel;
 
-class OpensourceChatPlugin implements PluginContract
+class OpensourceChatPanelPlugin implements PluginContract
 {
     public static function make(): static
     {
@@ -22,12 +22,15 @@ class OpensourceChatPlugin implements PluginContract
 
     public function register(Panel $panel): void
     {
-    // Delegate to Providers\OpensourceChatPanelPlugin for registration
-    (new OpensourceChatPanelPlugin())->register($panel);
+        $panel->pages([
+            OpenSourceChatPage::class,
+            OsModelsPage::class,
+            OpenSourceSettingsPage::class,
+        ]);
     }
 
     public function boot(Panel $panel): void
     {
-        //
+        // no-op
     }
 }
