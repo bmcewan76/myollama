@@ -1,5 +1,5 @@
 {
-    "name": "filaforge/opensource-chat",
+    "name": "filaforge/myollama",
     "description": "Open Source Chat management plugin for FilamentPHP with model profiles, user settings, and conversations CRUD pages.",
     "type": "library",
     "version": "0.1.0",
@@ -12,7 +12,7 @@
         "OpenSource",
         "LLM"
     ],
-    "homepage": "https://github.com/filaforge/opensource-chat",
+    "homepage": "https://github.com/bmcewan76/myollama",
     "authors": [
         {
             "name": "Filaforge",
